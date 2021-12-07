@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peso Ideal</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <img class="banner-img" src="./assets/images/banner.png" width="100%" alt="">
+
+        <div class="container my-5">
+
+
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h2 class="text-center text-uppercase title">
+                        ¡Calcula tu peso ideal!
+                    </h2>
+
+                    <label class="text-left" for="edad">Edad</label>
+                    <input class="form-control mb-3" type="number" v-model="edad" placeholder="Edad">
+
+                    <label for="peso">Peso</label>
+                    <input class="form-control mb-3" type="number" v-model="peso" placeholder="Peso">
+
+                    <label for="estatura">Estatura</label>
+                    <input class="form-control mb-3" type="number" v-model="estatura" placeholder="Estatura">
+
+                    <div class="text-center">
+                        <button class="btn btn-primary" v-on:click="calcular">
+                            Calcular
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 text-center">
+                    <h2 class="text-center text-uppercase title">
+                        Resultados
+                    </h2>
+                    
+                    <p class="text-center" v-if="!result">
+                        Ingrese los datos en el formulario y haga click en el boton CALCULAR y se mostrarán los resultados aquí.
+                    </p>
+
+
+                    <p class="text-justify" v-if="result">
+                        Su IMC (Índice de Masa Corporal) es de <i>{{ imc }}</i>
+                    </p>
+
+                    <p class="text-justify" v-if="result">
+                        Su situacion es <i>{{ situacion }}</i>
+                    </p>
+
+                    <p class="text-justify" v-if="result">
+                        Su peso mínimo es de {{ pesoMinimo }}
+                    </p>
+
+                    <p class="text-justify" v-if="result">
+                        Su peso máximo es de {{ pesoMaximo }}
+                    </p>
+
+                    <p class="text-justify" v-if="result">
+                        Su peso ideal es de {{ pesoIdeal }}
+                    </p>
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container my-4">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <img class="profile" width="100%" src="./assets/images/profile-1.png" alt="">    
+                </div>
+
+                <div class="col-md-8">
+                    <h3 class="title">Acerca del desarrollador</h3>
+
+                    <p>
+                        Me considero un apasionado por la tecnología, tanto del Software como del Hardware, inicie mi carrera como desarrollador de Software a la edad de 16 años como autodidacta en el lenguaje de programación Java, luego a la edad de 17 años entro a una academia de desarrollo web en la que comprendo mucho mejor el arte de programar (4GeeksAcademy). Hoy en día sigo aprendiendo de tecnología en plataformas digitales como Platzi y EDteam.
+                    </p>
+
+                    <div class="socials">
+                        <a href="https://www.instagram.com/jcjohan2707/" target="_blank">
+                            <img src="./assets/icons/instagram.svg" alt="">
+                        </a>
+
+                        <a href="https://github.com/johancastillo" target="_blank">
+                            <img src="./assets/icons/github.svg" alt="">
+                        </a>
+
+                        <a href="https://johangarcia.herokuapp.com/" target="_blank">
+                            <img src="./assets/icons/globe.svg" alt="">
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.all.min.js"></script>
+
+    <script src="./assets/js/main.js"></script>
+
+</body>
+
+</html>
