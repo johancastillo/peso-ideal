@@ -44,17 +44,17 @@ if(this.edad && this.peso && this.estatura){
         // Situacion de IMC
         if(this.imc <= 18.5){
             this.situacion = "Bajo peso"
-        }else if(this.imc > 18.5 || this.imc <= 24.9){
+        }else if(this.imc > 18.5 && this.imc <= 24.9){
             this.situacion = "Normopeso"
-        }else if(this.imc > 24.9 || this.imc <= 26.6){
+        }else if(this.imc > 24.9 && this.imc <= 26.6){
             this.situacion = "Sobre peso grado I"
-        }else if(this.imc > 26.6 || this.imc <= 29.9){
+        }else if(this.imc > 26.6 && this.imc <= 29.9){
             this.situacion = "Sobre peso grado II"
-        }else if(this.imc > 29.9 || this.imc <= 34.9){
+        }else if(this.imc > 29.9 && this.imc <= 34.9){
             this.situacion = "Obesidad tipo I"
-        }else if(this.imc > 34.9 || this.imc <= 39.9){
+        }else if(this.imc > 34.9 && this.imc <= 39.9){
             this.situacion = "Obesidad tipo II"
-        }else if(this.imc > 39.9 || this.imc <= 49.9){
+        }else if(this.imc > 39.9 && this.imc <= 49.9){
             this.situacion = "Obesidad tipo III (mórbida)"
         }else if(this.imc > 50){
             this.situacion = "Obesidad tipo IV (extrema)"
